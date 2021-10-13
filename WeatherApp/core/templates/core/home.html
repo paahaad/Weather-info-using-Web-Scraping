@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Condition</title>
+    <style>
+        * {
+            margin : 0
+            font family : "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            box-sizing : border-box;
+
+
+        }
+        #main{
+            text-align : center
+
+        }
+        input[type="text"]{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 5px
+        }
+        input[type="submit"]{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            background: black;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <h1>Find the Weather</h1>
+    <form method="get">
+        <label for="city"></label>
+        <input type="text" name="city" id="city"> <br>
+        <input type="submit" value="submit">
+    </form>
+    {% if weather %}
+        <h3>{{ weather.region }}</h3>
+        <h3>{{ weather.day_hour }}</h3>
+        <h3>{{ weather.temp_now }}</h3>
+        <h3>{{ weather.weather_now }}</h3>
+    {% endif %}
+</div>
+</body>
+</html>
